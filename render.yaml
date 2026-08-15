@@ -1,0 +1,14 @@
+services:
+  
+type: web
+  name: cookies-ai-api
+  runtime: node
+  plan: free
+  buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm --filter @workspace/api-server run build
+  startCommand: pnpm --filter @workspace/api-server run start
+  healthCheckPath: /api/healthz
+  envVars:
+key: NODE_ENV
+    value: production
+key: AQ.Ab8RN6Kt9o6iFKwO_cKnsnfzija0R52g92vp1e8m8EH7ntgpOA
+  sync: false
